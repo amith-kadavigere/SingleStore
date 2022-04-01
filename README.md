@@ -76,7 +76,7 @@ wsl --set-default-version 2
 
 1. Open the [Microsoft Store](https://aka.ms/wslstore) and select your favorite Linux distribution.
 
-    ![View of Linux distributions in the Microsoft Store](media/store.png)
+    ![View of Linux distributions in the Microsoft Store](https://github.com/MicrosoftDocs/WSL/blob/main/WSL/media/store.png)
 
     The following links will open the Microsoft store page for each distribution:
 

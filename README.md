@@ -95,13 +95,13 @@ wsl --set-default-version 2
 
 2. From the distribution's page, select "Get".
 
-    ![Linux distributions in the Microsoft store](media/UbuntuStore.png)
+    ![Linux distributions in the Microsoft store](https://github.com/MicrosoftDocs/WSL/blob/main/WSL/media/UbuntuStore.png)
 
 The first time you launch a newly installed Linux distribution, a console window will open and you'll be asked to wait for a minute or two for files to de-compress and be stored on your PC. All future launches should take less than a second.
 
 You will then need to [create a user account and password for your new Linux distribution](./setup/environment.md#set-up-your-linux-username-and-password).
 
-![Ubuntu unpacking in the Windows console](media/UbuntuInstall.png)
+![Ubuntu unpacking in the Windows console](https://github.com/MicrosoftDocs/WSL/blob/main/WSL/media/UbuntuInstall.png)
 
 **CONGRATULATIONS! You've successfully installed and set up a Linux distribution that is completely integrated with your Windows operating system!**
 
@@ -170,4 +170,4 @@ Using Windows Terminal enables you to open multiple tabs or window panes to disp
 
 [Install Windows Terminal](/windows/terminal/get-started).
 
-  ![Windows Terminal](media/terminal.png)
+  ![Windows Terminal](https://github.com/MicrosoftDocs/WSL/blob/main/WSL/media/terminal.png)

@@ -202,11 +202,7 @@ Using Windows Terminal enables you to open multiple tabs or window panes to disp
   ![Windows Terminal](https://github.com/MicrosoftDocs/WSL/blob/main/WSL/media/terminal.png)
   
 ---
-description: Docker Desktop WSL 2 backend
-keywords: WSL, WSL 2 Tech Preview, Windows Subsystem for Linux, WSL 2 backend Docker
-redirect_from:
-- /docker-for-windows/wsl/
-- /docker-for-windows/wsl-tech-preview/
+## Once WSL 2 installed, we need to install Docker Desktop for Windows and enable WSL2 backend.
 title: Docker Desktop WSL 2 backend
 toc_min: 2
 toc_max: 3

@@ -260,7 +260,7 @@ Ensure you have completed the steps described in the Prerequisites section **bef
 2. Start Docker Desktop from the Windows Start menu.
 3. From the Docker menu, select **Settings** > **General**.
 
-    ![Enable WSL 2](images/https://github.com/docker/docker.github.io/blob/master/desktop/windows/images/wsl2-enable.png){:width="750px"}
+    ![Enable WSL 2](images/https://github.com/docker/docker.github.io/blob/master/desktop/windows/images/wsl2-enable.png)
 
 4. Select the **Use WSL 2 based engine** check box.
 

@@ -352,5 +352,9 @@ GPU Device 0: "GeForce RTX 2060 with Max-Q Design" with compute capability 7.5
 
 ![image](https://user-images.githubusercontent.com/62608538/161215838-20e6a472-f03a-4d62-9e16-757d9585b502.png)
 
+![image](https://user-images.githubusercontent.com/62608538/161216559-aa47a0f5-7efd-45b4-b7ff-1a42d8b3d0a8.png)
+
+![image](https://user-images.githubusercontent.com/62608538/161216733-6678ec10-807b-4c61-b7a2-23e7dd68a8ee.png)
+
 
 

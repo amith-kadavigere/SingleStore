@@ -348,3 +348,9 @@ GPU Device 0: "GeForce RTX 2060 with Max-Q Design" with compute capability 7.5
 = 2724.379 single-precision GFLOP/s at 20 flops per interaction
 ```
 
+## What a successful deployment of Single Store Cluster-In-A-Box looks like in KinD
+
+![image](https://user-images.githubusercontent.com/62608538/161215838-20e6a472-f03a-4d62-9e16-757d9585b502.png)
+
+
+

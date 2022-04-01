@@ -1,5 +1,7 @@
 # SingleStore Cluster-in-a-box installation in Ubuntu WSL on Windows 10/11
 
+The purpose of this documentation is to simplify local SingleStore Cluster in a box setup in Windows using WSL2, Ubuntu for WSL2 and Docker Desktop for WSL backend and KinD (Kubernetes in Docker). Read on to know more.
+
 ## What is the Windows Subsystem for Linux?
 
 The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.

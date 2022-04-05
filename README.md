@@ -435,9 +435,9 @@ To get a free license for SingleStore, register at singlestore.com/software-stan
 ## Kubernetes Configuration Files
 Kubernetes stores configuration details in yaml files. (A yaml file is a text file that’s great for capturing our architecture setup.) Typically each yaml file contains a single resource. For simplicity, we’ll create one yaml file that includes both a deployment and a service. We’ll connect to the service, the service will proxy to the pod, and the pod will route the request into the container.
 
-We’ll use the memsql/cluster-in-a-box image built by SingleStore and available on Docker Hub. This image comes with the SingleStore database engine and SingleStore Studio preinstalled. The minimum system requirements are disabled in this “cluster-in-a-box” configuration.
+We’ll use the `memsql/cluster-in-a-box` image built by SingleStore and available on Docker Hub. This image comes with the SingleStore database engine and SingleStore Studio preinstalled. The minimum system requirements are disabled in this “cluster-in-a-box” configuration.
 
-Create an empty directory, and create a file named kubernetes-memsql.yaml inside. Open this file in your favorite code editor and paste in this content. As with Python source code, white space is significant.
+Create an empty directory, and create a file named `kubernetes-memsql.yaml` inside. Open this file in your favorite code editor and paste in this content. As with Python source code, white space is significant.
 
 Yaml uses two spaces, not tabs. Ensure each section is indented with exactly two spaces. If you have more or fewer spaces, or if you’re using tabs, you’ll get an error on startup.
 
@@ -503,6 +503,21 @@ spec:
     targetPort: 8080
 ```
 
+## Starting the SingleStore Cluster
+Open a new terminal window in the same directory with the `kubernetes-memsql.yaml` file. This could be Powershell, a command prompt, or a regular terminal.
+
+Type this in the shell:
+
+```console
+kubectl apply -f kubernetes-memsql.yaml
+```
+This tells Kubernetes to create (or adjust) the service and deployment definitions, and to startup the container. The output from the container isn’t streamed to the console.
+
+To see the status of the pod as it starts up, type:
+
+```console
+kubectl get all
+```
 
 ## What a successful deployment of Single Store Cluster-In-A-Box looks like in KinD
 

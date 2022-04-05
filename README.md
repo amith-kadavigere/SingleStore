@@ -433,14 +433,74 @@ A machine with at least 8GB RAM and four CPUs is recommended for this setup. Thi
 To get a free license for SingleStore, register at singlestore.com/software-standard/ and click the link in the confirmation email. Then go to the SingleStore customer portal and login. Click “Licenses” and you’ll see your license for running SingleStore for free. This license never expires, and is good for clusters up to four machines and up to 128GB of combined RAM. This is not the license you’ll want for a production cluster, but it’s great for these “kick the tires” scenarios. Note this license key. We’ll need to copy/paste it into place next.
 
 ## Kubernetes Configuration Files
-Kubernetes stores configuration details in yaml files. (A yaml file is a text file that’s great for capturing our architecture setup.) Typically each yaml file contains a single resource. For simplicity, we’ll create one yaml file that includes both a deployment and a service. We’ll connect to the service, the service will proxy to the pod, and the pod will route the request into the container. We’ll use the memsql/cluster-in-a-box image built by SingleStore and available on Docker Hub. This image comes with the SingleStore database engine and SingleStore Studio preinstalled. The minimum system requirements are disabled in this “cluster-in-a-box” configuration. Create an empty directory, and create a file named kubernetes-memsql.yaml inside. Open this file in your favorite code editor and paste in this content. As with Python source code, white space is significant. Yaml uses two spaces, not tabs. Double-check the yaml file to ensure each section is indented with exactly two spaces. If you have more or fewer spaces, or if you’re using tabs, you’ll get an error on startup.
+Kubernetes stores configuration details in yaml files. (A yaml file is a text file that’s great for capturing our architecture setup.) Typically each yaml file contains a single resource. For simplicity, we’ll create one yaml file that includes both a deployment and a service. We’ll connect to the service, the service will proxy to the pod, and the pod will route the request into the container.
 
+We’ll use the memsql/cluster-in-a-box image built by SingleStore and available on Docker Hub. This image comes with the SingleStore database engine and SingleStore Studio preinstalled. The minimum system requirements are disabled in this “cluster-in-a-box” configuration.
 
+Create an empty directory, and create a file named kubernetes-memsql.yaml inside. Open this file in your favorite code editor and paste in this content. As with Python source code, white space is significant.
 
+Yaml uses two spaces, not tabs. Ensure each section is indented with exactly two spaces. If you have more or fewer spaces, or if you’re using tabs, you’ll get an error on startup.
 
-
-
-
+# A deployment ensures pod(s) are restarted on failure
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: memsql
+spec:
+  replicas: 1 # only create one pod (container)
+  selector:
+    matchLabels:
+      app: memsql
+  template:
+    # Here's the definition of the pod:
+    metadata:
+      # The service finds all pods with matching metadata
+      labels:
+        app: memsql
+    spec:
+      containers:
+      - name: memsql
+        resources:
+        # Cluster-in-a-box image is pulled from Docker Hub 
+        image: memsql/cluster-in-a-box
+        ports:
+        - containerPort: 3306 # MemSQL db
+        - containerPort: 8080 # MemSQL Studio
+        env:
+        # 'Y' means keep running after cluster init
+        - name: START_AFTER_INIT
+          value: 'Y'
+        # TODO: set to your desired password
+        - name: ROOT_PASSWORD
+          value: 'password'
+        # TODO: paste your license key from portal.memsql.com here:
+        - name: LICENSE_KEY
+          value: PASTE_YOUR_LICENSE_KEY_HERE
+---
+# A service load-balances across and routes traffic into pods
+apiVersion: v1
+kind: Service
+metadata:
+  name: memsql
+  labels:
+    app: memsql
+spec:
+  type: NodePort
+  # Find all pods
+  selector:
+    app: memsql
+  ports:
+  # MemSQL db port:
+  - name: '3306'
+    nodePort: 30306
+    port: 3306
+    targetPort: 3306
+  # MemSQL Studio port:
+  - name: '8080'
+    nodePort: 30080
+    port: 8080
+    targetPort: 8080
+---
 
 
 ## What a successful deployment of Single Store Cluster-In-A-Box looks like in KinD

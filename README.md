@@ -441,6 +441,7 @@ Create an empty directory, and create a file named kubernetes-memsql.yaml inside
 
 Yaml uses two spaces, not tabs. Ensure each section is indented with exactly two spaces. If you have more or fewer spaces, or if you’re using tabs, you’ll get an error on startup.
 
+```
 # A deployment ensures pod(s) are restarted on failure
 apiVersion: apps/v1
 kind: Deployment
@@ -500,7 +501,7 @@ spec:
     nodePort: 30080
     port: 8080
     targetPort: 8080
----
+```
 
 
 ## What a successful deployment of Single Store Cluster-In-A-Box looks like in KinD

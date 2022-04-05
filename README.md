@@ -255,7 +255,7 @@ Ensure you have completed the steps described in the Prerequisites section **bef
 2. Start Docker Desktop from the Windows Start menu.
 3. From the Docker menu, select **Settings** > **General**.
 
-    ![Enable WSL 2](images/https://github.com/docker/docker.github.io/blob/master/desktop/windows/images/wsl2-enable.png)
+    ![Enable WSL 2](https://docs.docker.com/desktop/windows/images/wsl2-enable.png)
 
 4. Select the **Use WSL 2 based engine** check box.
 
@@ -426,7 +426,7 @@ Even though SingleStore is a distributed system, we could run a minimal version 
 
 A machine with at least 8GB RAM and four CPUs is recommended for this setup. This is ideal for quickly provisioning a system to understand the capabilities of the SQL engine. Kubernetes deployments are self sustained. Once deployed, except for customization, there would no further overhead of managing or configuring SingleStore to get it running.
 
-![SingleStore Cluster-In-A-Box Architecture](![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="400px"}){: width="400px"}
+![SingleStore Cluster-In-A-Box Architecture](![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="750px"}){: width="400px"}
 
 ## Sign Up For SingleStore
 

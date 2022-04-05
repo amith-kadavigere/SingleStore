@@ -388,10 +388,9 @@ Click **Apply & Restart** to save the settings and then click **Install** to con
 When Kubernetes is enabled and running, an additional status bar item displays
   at the bottom right of the Docker Desktop Settings dialog.
 
-The status of Kubernetes shows in the Docker menu and the context points to
-  `docker-desktop`.
+The status of Kubernetes shows in the Docker menu and the context points to `docker-desktop`.
 
-![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="400px"}
+![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="450px"}
 
 > Upgrade Kubernetes
 >
@@ -426,7 +425,7 @@ Even though SingleStore is a distributed system, we could run a minimal version 
 
 A machine with at least 8GB RAM and four CPUs is recommended for this setup. This is ideal for quickly provisioning a system to understand the capabilities of the SQL engine. Kubernetes deployments are self sustained. Once deployed, except for customization, there would no further overhead of managing or configuring SingleStore to get it running.
 
-![SingleStore Cluster-In-A-Box Architecture](![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="750px"}){: width="400px"}
+![SingleStore Cluster-In-A-Box Architecture](![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="750px"}
 
 ## Sign Up For SingleStore
 

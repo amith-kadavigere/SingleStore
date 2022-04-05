@@ -420,6 +420,28 @@ For more information about `kubectl`, see the
 
 To disable Kubernetes support at any time, clear the **Enable Kubernetes** check box. This stops and removes Kubernetes containers, and also removes the `/usr/local/bin/kubectl` command.
 
+## Once we have Kubernetes up and running with KinD, we can now deploy our Single Store Cluster-In-A-Box
+
+Even though SingleStore is a distributed system, we could run a minimal version of SingleStore on your laptop in Kubernetes. The combination of free access, and being able to run SingleStore on your laptop, can be extremely convenient for demos, software testing, developer productivity. Read on to find out how.
+
+A machine with at least 8GB RAM and four CPUs is recommended for this setup. This is ideal for quickly provisioning a system to understand the capabilities of the SQL engine. Kubernetes deployments are self sustained. Once deployed, except for customization, there would no further overhead of managing or configuring SingleStore to get it running.
+
+![SingleStore Cluster-In-A-Box Architecture](![Docker Menu with Kubernetes](https://docs.docker.com/desktop/images/kube-context.png){: width="400px"}){: width="400px"}
+
+## Sign Up For SingleStore
+
+To get a free license for SingleStore, register at singlestore.com/software-standard/ and click the link in the confirmation email. Then go to the SingleStore customer portal and login. Click “Licenses” and you’ll see your license for running SingleStore for free. This license never expires, and is good for clusters up to four machines and up to 128GB of combined RAM. This is not the license you’ll want for a production cluster, but it’s great for these “kick the tires” scenarios. Note this license key. We’ll need to copy/paste it into place next.
+
+## Kubernetes Configuration Files
+Kubernetes stores configuration details in yaml files. (A yaml file is a text file that’s great for capturing our architecture setup.) Typically each yaml file contains a single resource. For simplicity, we’ll create one yaml file that includes both a deployment and a service. We’ll connect to the service, the service will proxy to the pod, and the pod will route the request into the container. We’ll use the memsql/cluster-in-a-box image built by SingleStore and available on Docker Hub. This image comes with the SingleStore database engine and SingleStore Studio preinstalled. The minimum system requirements are disabled in this “cluster-in-a-box” configuration. Create an empty directory, and create a file named kubernetes-memsql.yaml inside. Open this file in your favorite code editor and paste in this content. As with Python source code, white space is significant. Yaml uses two spaces, not tabs. Double-check the yaml file to ensure each section is indented with exactly two spaces. If you have more or fewer spaces, or if you’re using tabs, you’ll get an error on startup.
+
+
+
+
+
+
+
+
 
 ## What a successful deployment of Single Store Cluster-In-A-Box looks like in KinD
 

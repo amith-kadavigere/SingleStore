@@ -128,6 +128,7 @@ If you are installing Robin on any cloud platform, the following
 ports need to be accessible for the installation to succeed and for
 Robin to operate correctly:
 
+```markdown
 +---------------+----------------+
 | **Ports**     | **Description**|
 +---------------+----------------+
@@ -153,6 +154,7 @@ Robin to operate correctly:
 +---------------+----------------+
 | 10250         | Kubelet        | 
 +---------------+----------------+
+```
 
 > **Note**: The above list of ports also apply to on-premises clusters. 
 

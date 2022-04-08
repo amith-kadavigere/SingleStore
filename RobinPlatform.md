@@ -176,7 +176,7 @@ To manage ports:
 --------------------
 
 * A security group that conforms to the port requirements detailed
-  `here <install.html#port-requirements-on-cloud-platforms>`_ must be assigned to the instances where
+  [here](install.html#port-requirements-on-cloud-platforms) must be assigned to the instances where
   Robin will be installed or passed to the GoROBIN tool for AWS.
 
 * The smallest set of IAM permissions needed to install Robin are
